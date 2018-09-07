@@ -1,0 +1,26 @@
+CREATE DATABASE Lab1;
+
+CREATE TABLE users (
+  id        integer PRIMARY KEY,
+  firstname VARCHAR(50),
+  lastname  VARCHAR(50)
+);
+
+SELECT * FROM users;
+
+ALTER TABLE users
+  ADD COLUMN isadmin INTEGER;
+alter table users
+    alter column isadmin set data type boolean using isadmin::boolean;
+
+CREATE TABLE tasks (
+  id      integer PRIMARY KEY ,
+  name    VARCHAR(50),
+  user_id INTEGER
+);
+
+alter table users add constraint primaryKey_tmp primary key(id);
+
+DROP TABLE tasks;
+
+DROP DATABASE Lab1;
